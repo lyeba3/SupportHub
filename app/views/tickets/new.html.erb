@@ -1,0 +1,47 @@
+<h1>New Ticket</h1>
+
+<%= form_with model: @ticket, multipart: true do |form| %>
+  <% if @ticket.errors.any? %>
+    <div>
+      <h2>
+        <%= pluralize(@ticket.errors.count, "error") %>
+        prevented this ticket from being saved:
+      </h2>
+
+      <ul>
+        <% @ticket.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :organization_id, "Organization" %>
+    <%= form.number_field :organization_id %>
+  </div>
+
+  <div>
+    <%= form.label :subject %>
+    <%= form.text_field :subject %>
+  </div>
+
+  <div>
+    <%= form.label :description %>
+    <%= form.text_area :description %>
+  </div>
+
+  <div>
+    <%= form.label :priority %>
+    <%= form.number_field :priority %>
+  </div>
+
+  <div>
+    <%= form.label :attachment, "PDF Attachment" %>
+    <%= form.file_field :attachment, accept: "application/pdf" %>
+  </div>
+
+  <%= form.submit "Create Ticket" %>
+<% end %>
+
+<%= link_to "Back", tickets_path %>

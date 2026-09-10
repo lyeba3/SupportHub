@@ -1,0 +1,20 @@
+printer:
+  organization: acme
+  requester: customer
+  subject: Printer is not working
+  status: open
+  priority: 2
+
+email:
+  organization: acme
+  requester: customer
+  subject: Email access issue
+  status: waiting
+  priority: 1
+
+resolved:
+  organization: acme
+  requester: customer
+  subject: Printer resolved
+  status: resolved
+  priority: 2

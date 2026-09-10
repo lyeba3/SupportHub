@@ -1,0 +1,21 @@
+<h1>Sign in to SupportHub</h1>
+
+<%= form_with url: session_path, method: :post do |form| %>
+  <% if flash[:alert] %>
+    <div>
+      <%= flash[:alert] %>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :email %>
+    <%= form.email_field :email, required: true %>
+  </div>
+
+  <div>
+    <%= form.label :password %>
+    <%= form.password_field :password, required: true %>
+  </div>
+
+  <%= form.submit "Sign in" %>
+<% end %>
