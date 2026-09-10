@@ -1,0 +1,13 @@
+lyeba:
+  organization: acme
+  name: Lyeba
+  email: lyeba@example.com
+  role: agent
+  password_digest: <%= BCrypt::Password.create("secret") %>
+
+customer:
+  organization: acme
+  name: Customer
+  email: customer@example.com
+  role: customer
+  password_digest: <%= BCrypt::Password.create("secret") %>

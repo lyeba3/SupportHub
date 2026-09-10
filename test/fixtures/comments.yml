@@ -1,0 +1,9 @@
+printer_comment:
+  ticket: printer
+  user: lyeba
+  body: "We are investigating the printer issue."
+
+email_comment:
+  ticket: email
+  user: lyeba
+  body: "The email access issue is being reviewed."

@@ -1,0 +1,13 @@
+<h1>SupportHub Tickets</h1>
+
+<%= link_to "New Ticket", new_ticket_path %>
+
+<ul>
+  <% @tickets.each do |ticket| %>
+    <li>
+      <%= link_to ticket.subject, ticket_path(ticket) %>
+      — <%= ticket.status %>
+      — Priority: <%= ticket.priority %>
+    </li>
+  <% end %>
+</ul>
